@@ -1,12 +1,10 @@
 const cohortsRouter = require("express").Router();
+const DB = require("./model");
 
-cohortsRouter.get("/", (req, res) => {
-  res.status(200).json(
-    [
-      "Web26",
-      "UX28"
-    ]
-  );
+cohortsRouter.get("/", async (req, res) => {
+  const allCohorts = await DB.all();
+  
+  res.status(200).json(allCohorts);
 })
 
 module.exports = cohortsRouter;
