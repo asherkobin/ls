@@ -3,7 +3,7 @@ exports.up = function(knex) {
     table.increments();
     table
       .string("name", 255)
-      .nonNullable()
+      .notNullable()
       .unique()
       .index();
   });

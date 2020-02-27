@@ -1,8 +1,10 @@
+require("dotenv").config();
+
 const request = require("supertest");
 const server = require("../api/server");
 
 describe("Cohorts Router", () => {
-  describe("Sanity", () => {
+  it("verify testing", async () => {
     expect(true).toBe(true);
   });
 
@@ -14,7 +16,7 @@ describe("Cohorts Router", () => {
 
     it("should return an array", async () => {
       const res = await request(server).get("/api/cohorts");
-      expect(Array.isArray(res.body).toBe(true));
+      expect(Array.isArray(res.body)).toBe(true);
     });
   });
 });
